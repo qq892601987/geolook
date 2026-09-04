@@ -117,18 +117,71 @@ pre.log{background:var(--deep);border-radius:var(--r-md);box-shadow:var(--sh-sm)
 .navit.on .mark{background:var(--accent-hot);box-shadow:0 0 10px var(--accent-hot)}
 .navit .bdg{margin-left:auto;font:650 10px/1 var(--mono);color:var(--t600)}
 
+#main{position:relative}
+#view{min-height:100vh}
+.workspace-topbar{min-height:62px;padding:0 44px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(7,19,17,.72);backdrop-filter:blur(18px);position:sticky;top:0;z-index:20}
+.workspace-route{display:flex;align-items:center;gap:10px;min-width:0}
+.workspace-route .eyebrow{font:650 9px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.workspace-route .slash{color:var(--t700)}
+.workspace-route strong{font-size:13px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.workspace-status{display:flex;align-items:center;gap:9px;font:650 10px/1 var(--mono);letter-spacing:.04em;color:var(--t500);white-space:nowrap}
+.workspace-status .dot{width:6px;height:6px;color:var(--accent);background:var(--accent)}
+.mission-shell,.onboard-shell{max-width:1360px;margin:0 auto;padding:36px 44px 76px}
+.mission-brief{display:grid;grid-template-columns:minmax(0,1fr) 225px;gap:20px;align-items:stretch;padding:25px 27px;border:1px solid var(--divider);background:linear-gradient(120deg,rgba(16,55,43,.9),rgba(8,25,22,.76));position:relative;overflow:hidden}
+.mission-brief::after{content:"";position:absolute;right:-18px;bottom:-62px;width:170px;height:170px;border:1px solid rgba(200,255,96,.38);border-radius:50%;box-shadow:0 0 0 22px rgba(89,230,192,.045),0 0 0 44px rgba(89,230,192,.025)}
+.mission-brief h1{font-size:clamp(28px,3vw,42px);max-width:720px;position:relative;z-index:1}
+.mission-brief .soft{font-size:14px;max-width:700px;position:relative;z-index:1}
+.health-readout{border-left:1px solid var(--divider);padding-left:22px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
+.health-readout .label{font:650 9px/1.2 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--t500)}
+.health-readout .value{font-size:56px;line-height:.9;letter-spacing:-.07em;color:var(--accent-hot);margin:9px 0 5px}
+.health-readout .note{font-size:11px;color:var(--t400)}
+.metric-rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;margin:18px 0;background:var(--divider);border:1px solid var(--divider)}
+.metric-cell{padding:15px 16px;background:var(--surface);min-width:0}
+.metric-cell .label{font:650 9px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--t500)}
+.metric-cell .value{font-size:27px;line-height:1;margin:10px 0 7px;letter-spacing:-.04em}
+.metric-cell .note{font-size:11px;line-height:1.45;color:var(--t600)}
+.mission-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:18px;margin-top:18px}
+.mission-panel{border:1px solid var(--line);background:rgba(13,33,29,.78);padding:20px}
+.panel-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:14px}
+.panel-heading h4{font-size:15px;margin:0}.panel-heading p{font-size:11.5px;color:var(--t600);margin:4px 0 0;line-height:1.5}
+.task-stack{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.task-item{padding:13px;background:var(--deep);display:grid;grid-template-columns:1fr auto;gap:6px 16px}
+.task-item .why{font-size:11.5px;color:var(--t500);line-height:1.5}.task-item .meta{font:10px/1.45 var(--mono);color:var(--t600);grid-column:1/-1}
+.onboard-shell{display:grid;grid-template-columns:minmax(280px,.75fr) minmax(0,1.25fr);gap:1px;padding-top:34px;background:var(--divider)}
+.onboard-intro,.onboard-workspace{padding:34px;background:var(--bg)}
+.onboard-intro{min-height:calc(100vh - 96px);display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(160deg,#0d2d26,var(--side))}
+.onboard-intro h1{font-size:clamp(34px,4vw,54px);max-width:430px}
+.onboard-intro .soft{font-size:14px;max-width:410px}
+.stage-list{display:grid;gap:12px;margin-top:38px}
+.stage-item{display:grid;grid-template-columns:25px 1fr;gap:10px;align-items:start;color:var(--t600)}
+.stage-item .num{font:650 10px/1.8 var(--mono);color:var(--t500);border-top:1px solid var(--t700)}
+.stage-item strong{display:block;font-size:12px;color:var(--t400)}.stage-item span{display:block;font-size:11px;line-height:1.45;margin-top:2px}
+.stage-item.active,.stage-item.active strong{color:var(--accent-hot)}.stage-item.active .num{border-color:var(--accent)}
+.onboard-workspace{padding:34px clamp(24px,5vw,70px);display:flex;align-items:center}
+.onboard-form{width:100%;max-width:720px}.onboard-form-header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:26px}
+.onboard-form-header h2{font-size:24px;margin:0}.onboard-form-header .step{font:650 10px/1 var(--mono);letter-spacing:.1em;color:var(--accent)}
+.onboard-providers{display:grid;grid-template-columns:1fr 1fr;gap:12px}.provider-card{padding:16px;border:1px solid var(--a700);background:rgba(11,48,38,.55)}.provider-card h4{font-size:14px;margin:0}.provider-card p{font-size:11.5px;color:var(--t400);line-height:1.55;margin:6px 0 10px}
 /* KPI 栅格与工作台三栏用 class 而非内联样式，方便窄屏媒体查询覆盖 */
 .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}
 .wb3{display:grid;grid-template-columns:262px minmax(360px,1fr) 300px;gap:14px;align-items:start;overflow-x:auto}
 #burger{display:none;position:fixed;top:10px;left:10px;z-index:70}
 @media (max-width:1100px){
   .wb3{grid-template-columns:1fr;overflow-x:visible}
+  .mission-grid{grid-template-columns:1fr}
+  .metric-rail{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .onboard-shell{grid-template-columns:1fr}
+  .onboard-intro{min-height:auto}
 }
 @media (max-width:900px){
   #burger{display:inline-flex}
   #side{position:fixed;left:-260px;transition:left .2s;z-index:50}
   #side.open{left:0}
-  #main{margin-left:0;padding-top:52px}
+  #main{margin-left:0;padding-top:0}
+  .workspace-topbar{padding:0 20px 0 64px}.workspace-status{display:none}
+  .mission-shell{padding:24px 20px 56px}.onboard-shell{margin:0;padding:0}.onboard-intro,.onboard-workspace{padding:28px 22px}
+  .mission-brief{grid-template-columns:1fr;padding:22px}.health-readout{border-left:0;border-top:1px solid var(--divider);padding:18px 0 0}
+  .metric-rail{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .onboard-providers{grid-template-columns:1fr}
   .kpis{grid-template-columns:repeat(2,1fr)}
 }
 </style>
@@ -199,6 +252,15 @@ const NAV=[
  {t:'成效 · 做了有没有用',items:[['verify','效果验收'],['report','报告与交付']]},
  {t:'账号',items:[['settings','设置']]},
 ];
+function workspaceTopbar(){
+  const page=R==='onboard'?'接入新品牌':(NAV.flatMap(g=>g.items).find(([k])=>k===R)||[])[1]||'总览';
+  const brand=(D&&D.brand&&D.brand.name)||'未命名品牌';
+  const date=(D&&D.analytics&&D.analytics.latest_date)||'等待首个信号';
+  return `<header class="workspace-topbar">
+    <div class="workspace-route"><span class="eyebrow">Signal field</span><span class="slash">/</span><strong>${esc(page)}</strong></div>
+    <div class="workspace-status"><span class="dot"></span><span>${esc(brand)} · ${esc(date)}</span></div>
+  </header>`;
+}
 function badge(k){
   if(!D||!D.analytics)return'';
   const a=D.analytics;
@@ -301,80 +363,53 @@ function vOverview(){
     const pts=tr.map((p,i)=>[xs(i),ys(p.health)]);
     const path=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
     return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:170px" preserveAspectRatio="none">
-      ${[0,.33,.66,1].map(f=>`<line x1="0" y1="${(P.t+(H-P.t-P.b)*f).toFixed(0)}" x2="${W}" y2="${(P.t+(H-P.t-P.b)*f).toFixed(0)}" stroke="#3f424d" stroke-width="1" ${f>0&&f<1?'stroke-dasharray="3 4"':''}></line>`).join('')}
-      <path d="${path} L${pts[pts.length-1][0]},${H} L${pts[0][0]},${H} Z" fill="#9184d9" opacity="0.10"></path>
-      <path d="${path}" fill="none" stroke="#9184d9" stroke-width="2.5" stroke-linejoin="round"></path>
-      <circle cx="${pts[pts.length-1][0]}" cy="${pts[pts.length-1][1]}" r="4" fill="#9184d9"></circle>
+      ${[0,.33,.66,1].map(f=>`<line x1="0" y1="${(P.t+(H-P.t-P.b)*f).toFixed(0)}" x2="${W}" y2="${(P.t+(H-P.t-P.b)*f).toFixed(0)}" stroke="#1b3831" stroke-width="1" ${f>0&&f<1?'stroke-dasharray="3 4"':''}></line>`).join('')}
+      <path d="${path} L${pts[pts.length-1][0]},${H} L${pts[0][0]},${H} Z" fill="#59e6c0" opacity="0.10"></path>
+      <path d="${path}" fill="none" stroke="#59e6c0" stroke-width="2.5" stroke-linejoin="round"></path>
+      <circle cx="${pts[pts.length-1][0]}" cy="${pts[pts.length-1][1]}" r="4" fill="#c8ff60"></circle>
     </svg>
     <div style="display:flex;justify-content:space-between;font-size:10.5px;color:var(--t600)">
       ${tr.map(p=>`<span>${p.date.slice(5)}</span>`).join('')}</div>`;
   })();
-  return `<div style="padding:32px 44px 72px;max-width:1280px">
-    <div class="kicker">现状 · 总览</div>
-    <h3>${esc(ht)}</h3>
-    <p class="soft" style="font-size:14px;max-width:660px">${esc(hs)}</p>
+  return `<div class="mission-shell">
+    <section class="mission-brief">
+      <div>
+        <div class="kicker">Signal brief · ${esc(a.latest_date||'等待首轮采样')}</div>
+        <h1>${esc(ht)}</h1>
+        <p class="soft">${esc(hs)}</p>
+      </div>
+      <div class="health-readout">
+        <span class="label">品牌信号健康度</span>
+        <span class="value">${h.score==null?'—':h.score}</span>
+        <span class="note">${h.measured.length}/5 项已建立观测</span>
+      </div>
+    </section>
 
-    <div class="kpis">
-      ${kpis.map(([l,v,n])=>`<div class="card elev" style="gap:4px;padding:15px">
-        <div style="font-size:11.5px;color:var(--t500)">${l}</div>
-        <div style="font-size:29px;font-weight:500;letter-spacing:-.02em">${v}</div>
-        <div style="font-size:11px;color:var(--t600);line-height:1.4">${n}</div></div>`).join('')}
+    <section class="metric-rail" aria-label="核心指标">
+      ${kpis.map(([l,v,n])=>`<div class="metric-cell"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${n}</div></div>`).join('')}
+    </section>
+
+    <div class="mission-grid">
+      <section class="mission-panel">
+        <div class="panel-heading"><div><h4>信号趋势</h4><p>健康度把提及、引用、阵地、内容与事实一致性汇为同一条可追踪的行动曲线。</p></div>${h.score!=null?`<span class="tag tag-accent">${h.score} / 100</span>`:''}</div>
+        ${svg}
+      </section>
+      <section class="mission-panel">
+        <div class="panel-heading"><div><h4>本周期优先行动</h4><p>不堆建议；只展示能推动品牌信号的下一步。</p></div><span class="tag tag-outline">${open.length} 件</span></div>
+        <div class="task-stack">${open.map(t=>`<article class="task-item"><div><div style="display:flex;justify-content:space-between;gap:10px"><strong style="font-size:13px">${esc(t.title)}</strong><span class="tag ${t.priority==='P0'?'tag-accent':'tag-dim'}">${t.priority}</span></div><p class="why">${esc(t.why)}</p></div><div class="meta">${esc(t.owner)} · ${esc(t.effort)}<br>验收：${esc((t.acceptance||{}).desc||'')}</div></article>`).join('')||'<div class="muted" style="padding:14px">暂无任务。先运行一期来建立行动清单。</div>'}</div>
+        <button class="btn btn-primary btn-block" style="margin-top:14px" onclick="go('plan')">查看完整行动计划</button>
+      </section>
     </div>
 
-    <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:14px;margin-top:14px">
-      <div class="card elev" style="padding:18px">
-        <div style="display:flex;justify-content:space-between;align-items:baseline">
-          <div><div style="font-size:15px;font-weight:500">GEO 健康分趋势</div>
-            <div style="font-size:11.5px;color:var(--t600)">加权：提及率30 引用25 阵地20 内容15 事实10；未测项权重重新归一。</div></div>
-          ${h.score!=null?`<span class="tag tag-accent">${h.score}</span>`:''}
-        </div>
-        <div style="margin-top:10px">${svg}</div>
-      </div>
-      <div class="card elev" style="padding:18px;gap:10px">
-        <div><div style="font-size:15px;font-weight:500">下一步做这 ${open.length} 件事</div>
-          <div style="font-size:11.5px;color:var(--t600)">按优先级取自行动计划。</div></div>
-        ${open.map(t=>`<div style="padding:12px;border-radius:var(--r-md);background:var(--deep);box-shadow:var(--sh-sm);display:flex;flex-direction:column;gap:5px">
-          <div style="display:flex;justify-content:space-between;gap:8px">
-            <span style="font-size:13.5px">${esc(t.title)}</span>
-            <span class="tag ${t.priority==='P0'?'tag-accent':'tag-dim'}" style="flex:none">${t.priority}</span></div>
-          <div style="font-size:11.5px;color:var(--t500);line-height:1.45">${esc(t.why)}</div>
-          <div style="font-size:11px;color:var(--t600)">${esc(t.owner)} · ${esc(t.effort)} · 验收：${esc((t.acceptance||{}).desc||'')}</div>
-        </div>`).join('')||'<div class="muted">暂无任务，先到「设置」跑一期。</div>'}
-        <button class="btn btn-primary btn-block" onclick="go('plan')">打开行动计划（${(D.tasks||[]).length} 项）</button>
-      </div>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px">
-      <div class="card elev" style="padding:18px">
-        <div style="font-size:15px;font-weight:500">各引擎表现</div>
-        <div style="font-size:11.5px;color:var(--t600);margin-bottom:8px">同一批问题在不同引擎上的差异，几乎完全由信源结构决定。</div>
-        ${engs.map(e=>`<div style="display:flex;align-items:center;gap:10px;padding:5px 0">
-          <span style="width:96px;font-size:12.5px;flex:none">${esc(e.label)}</span>
-          <span class="bar" style="flex:1"><span style="width:${((e.mention||0)/maxm*100).toFixed(0)}%"></span></span>
-          <span style="width:48px;text-align:right;font-size:12px;color:var(--t400);flex:none">${pct(e.mention)}</span>
-        </div>`).join('')||'<div class="muted">尚未采样</div>'}
-        <button class="btn btn-ghost" style="align-self:flex-start;margin-top:6px" onclick="go('engines')">逐个引擎下钻 →</button>
-      </div>
-      <div class="card elev" style="padding:18px">
-        <div style="font-size:15px;font-weight:500">你和对手的差距在哪一层</div>
-        <div style="font-size:11.5px;color:var(--t600);margin-bottom:8px">对手数据来自同一批采样中的竞品出现率；标 — 的层无法对对手测量。</div>
-        ${[['曝光层 · 提及率',S.mention,topRival?topRival.presence:null,topRival?topRival.name:'—'],
-           ['引用层 · 引用份额',S.cite,null,'不可测'],
-           ['承接层 · 内容承接',S.content,null,'不可测']].map(([n,me,them,who])=>{
-          const mx=Math.max(.001,me||0,them||0);
-          return `<div style="padding:11px 0;box-shadow:inset 0 -1px 0 var(--line)">
-          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px">
-            <span>${n}</span><span style="font-size:12px;color:var(--a400)">${them!=null&&me!=null&&me>0?('差 '+(them/me).toFixed(1)+' 倍'):''}</span></div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:11px;color:var(--t600)">
-            <span style="width:48px">你</span><span class="bar" style="flex:1"><span style="width:${((me||0)/mx*100).toFixed(0)}%"></span></span>
-            <span style="width:44px;text-align:right">${pct(me)}</span></div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:11px;color:var(--t600);margin-top:4px">
-            <span style="width:48px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(who)}</span>
-            <span class="bar" style="flex:1"><span style="width:${them!=null?((them/mx)*100).toFixed(0):0}%;background:#595d6c"></span></span>
-            <span style="width:44px;text-align:right">${them!=null?pct(them):'—'}</span></div>
-        </div>`}).join('')}
-        <button class="btn btn-ghost" style="align-self:flex-start;margin-top:6px" onclick="go('gaps')">看差距诊断 →</button>
-      </div>
+    <div class="mission-grid">
+      <section class="mission-panel">
+        <div class="panel-heading"><div><h4>引擎信号面</h4><p>同一批问题在不同引擎上的主动提及率。</p></div><button class="btn btn-ghost" onclick="go('engines')">查看引擎 →</button></div>
+        ${engs.map(e=>`<div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)"><span style="width:108px;font-size:12px;flex:none">${esc(e.label)}</span><span class="bar" style="flex:1"><span style="width:${((e.mention||0)/maxm*100).toFixed(0)}%"></span></span><span style="width:48px;text-align:right;font:650 11px/1 var(--mono);color:var(--t300);flex:none">${pct(e.mention)}</span></div>`).join('')||'<div class="muted" style="padding:14px 0">尚未采样。完成接入后，这里会显示各引擎的真实回答信号。</div>'}
+      </section>
+      <section class="mission-panel">
+        <div class="panel-heading"><div><h4>竞争差距</h4><p>按可观测层级定位：先进入候选集，再获得引用，最后承接需求。</p></div><button class="btn btn-ghost" onclick="go('gaps')">诊断差距 →</button></div>
+        ${[['曝光层 · 提及率',S.mention,topRival?topRival.presence:null,topRival?topRival.name:'—'],['引用层 · 引用份额',S.cite,null,'不可测'],['承接层 · 内容承接',S.content,null,'不可测']].map(([n,me,them,who])=>{const mx=Math.max(.001,me||0,them||0);return `<div style="padding:11px 0;border-bottom:1px solid var(--line)"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:7px"><strong>${n}</strong><span style="font:650 10px/1 var(--mono);color:var(--accent-hot)">${them!=null&&me!=null&&me>0?('差 '+(them/me).toFixed(1)+' 倍'):''}</span></div><div style="display:flex;align-items:center;gap:8px;font-size:10px;color:var(--t600)"><span style="width:54px">你的品牌</span><span class="bar" style="flex:1"><span style="width:${((me||0)/mx*100).toFixed(0)}%"></span></span><span style="width:44px;text-align:right">${pct(me)}</span></div><div style="display:flex;align-items:center;gap:8px;font-size:10px;color:var(--t600);margin-top:5px"><span style="width:54px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(who)}</span><span class="bar" style="flex:1"><span style="width:${them!=null?((them/mx)*100).toFixed(0):0}%;background:var(--t600)"></span></span><span style="width:44px;text-align:right">${them!=null?pct(them):'—'}</span></div></div>`}).join('')}
+      </section>
     </div>
   </div>`;
 }
@@ -1721,23 +1756,23 @@ async function vOnboard(){
         const or=KEYS.find(k=>k.code==='openrouter');
         if(ai&&ai.ok) return '';  // 302.AI 已启用
         if(or&&or.ok) return '';  // OpenRouter 已启用
-        return `<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-          <div class="card" style="box-shadow:0 0 0 1px var(--a700);padding:14px 16px;gap:6px;display:flex;flex-direction:column">
-            <div style="font-size:13.5px;font-weight:500">⚡ 302.AI 模式</div>
-            <div style="font-size:11.5px;color:var(--t400);line-height:1.6">1 把 Key 解锁 <b>9 LLM + 9 搜索 + 豆包</b>。<a href="https://302.ai" target="_blank" style="color:var(--a300)">注册</a>，模型默认 2026-08 最新。</div>
-            <div class="row" style="margin-top:4px;gap:6px;flex-wrap:wrap">
-              <input id="ob-aikey" class="input" type="password" placeholder="sk-...（粘贴 302.AI Key）" style="flex:1;min-width:200px">
-              <button class="btn btn-primary" style="font-size:12.5px" onclick="obEnableAi()">启用</button>
+        return `<div class="onboard-providers">
+          <section class="provider-card">
+            <h4>302.AI 模式</h4>
+            <p>一把 Key 接入 <b>9 LLM + 9 搜索 + 豆包</b>。<a href="https://302.ai" target="_blank">注册</a>后粘贴即可启用。</p>
+            <div class="row" style="gap:6px;flex-wrap:wrap">
+              <input id="ob-aikey" class="input" type="password" placeholder="sk-...（粘贴 302.AI Key）" style="flex:1;min-width:180px">
+              <button class="btn btn-primary" onclick="obEnableAi()">启用</button>
             </div>
-          </div>
-          <div class="card" style="box-shadow:0 0 0 1px var(--a300);padding:14px 16px;gap:6px;display:flex;flex-direction:column">
-            <div style="font-size:13.5px;font-weight:500">🌐 OpenRouter 模式</div>
-            <div style="font-size:11.5px;color:var(--t400);line-height:1.6">1 把 Key 解锁 <b>10 LLM（含 M3 多模态 + bytedance-seed 豆包）</b>。<a href="https://openrouter.ai/keys" target="_blank" style="color:var(--a300)">申请</a>，覆盖 Llama/Mistral/Qwen 等更多西方模型。</div>
-            <div class="row" style="margin-top:4px;gap:6px;flex-wrap:wrap">
-              <input id="ob-orkey" class="input" type="password" placeholder="sk-or-v1-...（粘贴 OpenRouter Key）" style="flex:1;min-width:200px">
-              <button class="btn btn-primary" style="font-size:12.5px" onclick="obEnableOr()">启用</button>
+          </section>
+          <section class="provider-card">
+            <h4>OpenRouter 模式</h4>
+            <p>一把 Key 接入 <b>10 LLM</b>，适合海外模型与多模态工作流。<a href="https://openrouter.ai/keys" target="_blank">申请 Key</a>。</p>
+            <div class="row" style="gap:6px;flex-wrap:wrap">
+              <input id="ob-orkey" class="input" type="password" placeholder="sk-or-v1-...（粘贴 OpenRouter Key）" style="flex:1;min-width:180px">
+              <button class="btn btn-primary" onclick="obEnableOr()">启用</button>
             </div>
-          </div>
+          </section>
         </div>
         <div class="row" style="justify-content:center;gap:8px;margin-top:4px">
           <span class="muted" style="font-size:11.5px">两个聚合器互斥使用，只配一个即可</span>
@@ -1779,13 +1814,29 @@ async function vOnboard(){
         <button class="btn btn-secondary" onclick="go('facts')">先核对事实库</button></div>
     </div>`;
   }
-  return `<div style="padding:44px;display:flex;justify-content:center"><div style="width:100%;max-width:720px">
-    <div class="kicker">接入引导 · 第 ${s} / 3 步</div>
-    <h3>${['','你是谁，做什么','正在生成首份诊断','完成'][s]}</h3>
-    <p class="soft" style="font-size:13.5px">${['','只要域名。竞品与问题库将从官网内容自动推导，之后随时可改。','首次全流程视采样规模约 10–30 分钟。','底座就绪。'][s]}</p>
-    <div style="display:flex;gap:6px;margin:20px 0 26px">${bars}</div>
-    ${body}
-  </div></div>`;
+  const titles=['','建立品牌信号底座','采集与推导首轮信号','首个行动周期已就绪'];
+  const subs=['','填写品牌网站。系统从可公开验证的网页内容建立事实、竞品和问题库，不用猜。','正在进行抓站、问题推导、答案采样与行动拆解。你可以离开此页，任务会继续运行。','核对事实，确认问题，再按行动计划推进。所有下一步都保留证据与验收条件。'];
+  const stages=[['01','连接信号源','网站与市场范围'],['02','建立判断模型','事实、竞品与问题库'],['03','转化为行动','诊断、工单与验收']];
+  return `<div class="onboard-shell">
+    <section class="onboard-intro">
+      <div>
+        <div class="kicker">Signal intake / 第 ${s} 阶段</div>
+        <h1>让 AI 世界<br>看见你的品牌。</h1>
+        <p class="soft">GeoLook 将分散的回答、引用和内容缺口，转化成一套可执行的品牌信号系统。</p>
+        <div class="stage-list">
+          ${stages.map((x,i)=>`<div class="stage-item ${s===i+1?'active':''}"><span class="num">${x[0]}</span><div><strong>${x[1]}</strong><span>${x[2]}</span></div></div>`).join('')}
+        </div>
+      </div>
+      <div class="brand-context">Local-first · Evidence-backed · Human-approved</div>
+    </section>
+    <section class="onboard-workspace">
+      <div class="onboard-form">
+        <div class="onboard-form-header"><div><div class="step">阶段 ${String(s).padStart(2,'0')} / 03</div><h2>${titles[s]}</h2></div><span class="tag tag-outline">SIGNAL INTAKE</span></div>
+        <p class="soft" style="font-size:13.5px;margin-bottom:24px">${subs[s]}</p>
+        ${body}
+      </div>
+    </section>
+  </div>`;
 }
 async function obCreate(){
   const url=$('#ob-url').value.trim();
@@ -1981,7 +2032,8 @@ async function render(){
   renderSide();
   const fn=VIEWS[R]||vOverview;
   const out=fn();
-  $('#view').innerHTML=(out instanceof Promise)?await out:out;
+  const page=(out instanceof Promise)?await out:out;
+  $('#view').innerHTML=workspaceTopbar()+page;
   if((R==='settings'||R==='onboard')&&RUNNING)pollJob();
 }
 function normAnalytics(a){
